@@ -1,0 +1,235 @@
+* {/*reset do css*/
+    margin: 0; /*0 de margem*/
+    padding: 0; 
+    box-sizing: border-box; /*Começa a contar o tamanho do elemento a partir da borda da caixa*/
+}
+
+body{
+    background-color: Gray; /*background-image: url('../IMG/RO2_1600x1200.jpg');*/
+    backdrop-filter: blur (20px);
+    background-size: auto 100vh;/*vh --> vp carrega o site de acordo com o dispositivo... auto completa a página 100vh*/
+    font-family: 'Courgette', cursive;
+    font-size:10px;
+    /*limitando a altura do site height: 100vh; */
+}
+
+/*condição*/ /*tamanho minimo*/
+/* se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media (min-width: 400px){
+    body{
+        font-size: 14px;
+    }
+}
+
+/*breakpoint*/
+@media (min-width: 600px){
+    body{
+        font-size: 18px;
+    }
+}
+
+
+header{
+    height: 100vh;
+    display: flex; /* sozinha ela add coluna*/
+    justify-content: center; /*centralizar horizontaqlmente*/
+    align-items: center; /*centralizar verticalmente*/ /*nav foi atingido... magunçando tudo  --> .menu top:0 ;*/
+}
+
+.menu{
+    background-color: dimgray;
+    position: fixed;/*desconfigura  o espaçamento*/
+    width: 100vw;/*toda a largura do "vil port"*/
+    top: 0;
+    z-index: 1; /*torna este elemento mais importante que os outros na qual n há numeros declarados, impedindo que se sobreponha a este*/
+}
+
+/*aumentar a área de click*/
+.menu a {
+    /*background-color para ver o tamanho da área de click*/
+    /*Tranformando em blocos para aumentar a área do click*/
+    display: block;
+    transition: background-color 2s, color 1s; /*efeito do .menu a*/ /*transition: 2s; para todas as propriedades*/
+    padding: 10px 20px;
+}
+
+.menu a:active, /*quando o usuario clicar aparece a animação*/
+.menu a:hover{
+    background-color: #a1a17e;
+    color: black;
+}
+
+.menu ul{
+    display: flex;/*Força a virar coluna*/
+    justify-content: space-around;/*space-between*/
+}
+
+.menu li{
+    list-style: none;/*tirando o estilo de lista*/
+}
+
+.TITULO {
+    transform: scale(0.2) translateY(50vh);
+    opacity:0;
+
+    animation: linear 2s animacaoTITULO forwards; /*este ultimo faz com que a animção se conclua e pare na própria*/
+}
+
+/*criando uma animaçao*/
+@keyframes animacaoTITULO{
+    /*0% {
+estado inicial ja fi declarado em .TITULO
+    }*/
+    100% {
+        transform: scale(1) translateY(0);
+        opacity:1;
+    }
+
+
+}
+
+
+a{
+    color:white;
+    text-decoration: none; /*tirando o underline*/
+}
+
+/*pseudoclasse...*/
+a:hover {
+    text-decoration: underline;/* após o mause passar em cima da palavra, aparecerá o underline*/
+}
+
+.site-subtitle,
+.site-title{
+    color: #ffffaf;
+    text-align: center; /*centralizar o texto*/
+}
+
+.site-title{
+    font-size: 4em; /* 2 vexes o tamanho das letras do site*/
+    font-family: 'Roboto', sans-serif;/* mudando a fonte do nome*/
+}
+
+.site-subtitle{
+    font-style: italic;
+}
+
+.projP {
+    text-align: center;
+}
+
+.sobre,
+.portfolio {
+    padding: 2em;
+    min-height: 100vh; /*tamanho da página*/ /*IMPORTANTE... min height faz com que o conteudo da 3 seção não fique sobreposto á segunda*/
+
+}
+
+@media (min-width: 1360px ) {
+    .container{
+        max-width: 1200px;
+    /*centralizando horizontalmente*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.sobre,
+.contato h2,
+.portfolio h2 {
+    color: white;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 2em;
+    margin-bottom: 1.5em; /* margem do titulo (em baixo)*/
+}
+
+.sobre p {
+    margin-bottom: 1em; /*distanciamento entre paragrafos <p>*/
+    text-align: justify; /*justifica o texto*/
+    text-indent: 1.5em; /*distanciamento / paragrafo*/
+}
+
+/*seletor hierarquico vai modificar todo elemento de classe grid contido em algum elemento da classe portfolio*/
+.portfolio .grid{
+    display: grid; /* em forma de grade... add a quantidade de colunas que desejas*/
+    /* propriedades especiais especificos de siplay: drid*/
+    gap: 2em; /* espaçamento de cada linha ou coluna*/
+    grid-template-columns: 240px 240px; /*quantas colunas eu quero*/
+}
+
+/*condição para a largura do grid*/
+@media (min-width: 300px ){
+    .portfolio .grid{
+        grid-template-columns: 240px;
+        justify-content: center ;/* centralizandoo grid*/
+    }
+}
+
+@media (min-width: 700px ){
+    .portfolio .grid{
+        grid-template-columns: repeat(2, 240px);
+        justify-content: center ;
+    }
+}
+
+@media (min-width: 1360px ){
+    .portfolio .grid{
+        grid-template-columns: repeat(4, 240px);
+        align-content: center;
+        justify-content: center ;
+        height: calc(100vh - 4em - 48px - 1.5em - 3em) /*ajudar a centralizar verticalmente*/
+    }
+}
+
+/*centralizando a imagem e o texto*/
+.portfolio figure{
+    text-align: center;
+}
+
+/*formatando as imagens*/
+.img-portfolio{
+    width: 240px;
+    height: 180px;
+    /*object-fit: cover ;*/ /* conteam coloca a foto com a mesma proporção originaol*//*cover faz com que a imagem ocupe todo o espaço definido */
+    /*object-position: left bottom;*/
+    border-radius: 10%; /*"arredondando a imagem"*/
+    transition: transform 1s;
+}
+
+.img-portfolio:hover{
+    transform: scale(1.2) rotate(1080deg) ; /*aumenta o tamanho da imagem quando o mause passar po cima*/
+}
+
+.contato{
+    background-color: dimgray;
+    min-height: 15vh ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contato a {
+    color: gainsboro;
+    font-size: 4em; /*10px x 4em*/
+    transition: text-shadow 1s;
+}
+
+.contato a:active,
+/*tirar o underline que foi declarado mais em cima das imagens*/
+.contato a:hover {
+    text-decoration: none;
+    /*aplicando alguma sobra para quando o mause passar por cima do icone de link*/
+    text-shadow: 0px 0px 10px honeydew;
+}
+
+.contato .h22{
+    text-align: center;
+    margin: 0px;
+    font-size: 2em;
+}
+
+.contato .icons{
+    text-align: center;
+}
+
+/*em é uma unidade de medida que é o dobro da font-size do body*/

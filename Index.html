@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuda a ajustar em qualquer tela de dispositivo que abrir o site-->
+      <link rel="stylesheet" href="CSS/visual.css">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Roboto&family=Source+Serif+Pro:wght@600&display=swap" 
+        rel="stylesheet"> <!-- escolhendo fontes de texto para o site com o gogle fonts-->
+      
+      <script src="https://kit.fontawesome.com/e1dd741d22.js" crossorigin="anonymous"></script>
+      
+      <title>K. Kont</title>
+  </head>
+
+  <body>
+    <header> <!-- para facilitar as modificações pelo css-->
+      <nav class="menu"> <!-- Os comandos podem ser reaproveitados, diferente do id que é um único comando -->
+           <ul class="container">
+                <li><a href="#sobre">sobre</a></li>
+                <li><a href="#portfolio">portifólio</a></li>
+                <li><a href="#contato">contato</a></li>
+            </ul>
+        </nav>
+        <div class="TITULO">
+            <h1 class="site-title"> Francisco Cosme </h1>
+            <h2 class="site-subtitle">Jr. Develeper</h2>
+        </div>
+    </header>
+
+    <section class="sobre container">
+      <h2>Sobre</h2>
+      <figure>
+        <img src="" alt="">
+
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non pariatur delectus voluptas voluptatibus optio vitae accusamus? Illo, neque fugiat. Delectus, nisi optio. Quidem minus veniam rem temporibus obcaecati officiis aliquid.
+        </p>
+
+        <p>
+          Quibusdam non dolorum sunt? Deserunt corrupti ad fuga! Unde qui corporis totam quae iste at, consequatur expedita omnis explicabo error excepturi iusto delectus reiciendis repudiandae, incidunt ullam quibusdam voluptatum sed.
+        </p>
+
+        <p>
+          Quia aut praesentium tempore quae esse et debitis vero, aperiam quos quas corporis. Quo nobis amet praesentium consectetur! Repellat iusto animi ipsum, sit corporis natus error dolore. Obcaecati, consectetur minima.
+        </p>
+
+        <p>
+          Esse site foi construído durante a <a href="https://www.alura.com.br/imersao-css">Imersão CSS da Alura</a> ;)
+        </p>
+      </figure>
+    </section>
+    <section class="portfolio container" id="portfolio"> <!--id usado como ancora para carregar o href #+nome-->
+      <h2 class="projP" >Projetos Pessoais</h2>
+
+      <div class="grid"> <!-- Criando colunas com div... atalho .grid-->
+        <figure>
+          <img class="img-portfolio" src="./IMG/4975968.png" alt="Alura">
+          <figcaption>Alura</figcaption>
+        </figure>
+        <figure>
+          <img class="img-portfolio" src="./IMG/3376_parceiro.jpeg" alt=">UFPI">
+          <figcaption>UFPI</figcaption>
+        </figure>
+        <figure>
+          <img class="img-portfolio" src="./IMG/19040507.548ed3b600b23.png" alt="Mobile"><!-- O alt é essencial para as tags img... proporciona acessibilidade para as pessoas que tem problema visual-->
+          <figcaption>Mobile</figcaption>
+        </figure>
+        <figure>
+          <img class="img-portfolio" src="./IMG/Blender_logo_no_text.svg.png" alt="Blender">
+          <figcaption>Blender</figcaption>
+        </figure>
+      </div>
+
+    </section>
+    <section class="contato" id="contato">
+      <h2 class="h22">Contato</h2>
+      <div class="grid icons">
+        <a target="_blank" href="https://github.com">
+          <i class="fab fa-github"></i><!-- icone com link para a pessoa clicar e ir direto pro site-->
+        </a>
+        <a target="_blank" href="https://mail.google.com/mail/u/1/#inbox">
+          <i class="far fa-envelope"></i>
+        </a>
+
+      </div>
+    </section>    
+  </body>
+</html>
