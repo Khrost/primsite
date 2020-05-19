@@ -125,6 +125,7 @@ a:hover {
 
 }
 
+
 @media (min-width: 1360px ) {
     .container{
         max-width: 1200px;
@@ -142,6 +143,26 @@ a:hover {
     font-family: 'Source Serif Pro', serif;
     font-size: 2em;
     margin-bottom: 1.5em; /* margem do titulo (em baixo)*/
+}
+.sobre a{
+    color: darkslategrey;
+    /*text-decoration: underline;*/
+}
+
+.sobre a:hover{
+    background-color: darkturquoise;
+    color: floralwhite;
+    /*text-decoration: none;*/
+}
+
+.sobre .fig{
+    float: right;
+    margin-left: 1em;/*a imagem flutue sobre o texto (quebra de texto)*/
+}
+
+.sobre .fig img{
+    /*border-radius: 50%;*/
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);/*cortando a img ou texto com base no caminho */
 }
 
 .sobre p {
@@ -191,15 +212,26 @@ a:hover {
 .img-portfolio{
     width: 240px;
     height: 180px;
-    /*object-fit: cover ;*/ /* conteam coloca a foto com a mesma proporção originaol*//*cover faz com que a imagem ocupe todo o espaço definido */
-    /*object-position: left bottom;*/
-    border-radius: 10%; /*"arredondando a imagem"*/
-    transition: transform 1s;
+    object-fit: cover ; /* conteam coloca a foto com a mesma proporção originaol*//*cover faz com que a imagem ocupe todo o espaço definido */
+    object-position: left bottom;
+    /*border-radius: 10%;*/ /*"arredondando a imagem"*/
+    transition: transform 500ms;
 }
 
-.img-portfolio:hover{
-    transform: scale(1.2) rotate(1080deg) ; /*aumenta o tamanho da imagem quando o mause passar po cima*/
+/*aumenta o tamanho da imagem quando o mause passar po cima*/
+/*.img-portfolio:hover{
+    transform: scale(1.2) rotateY(180deg) ; 
+}*/ 
+
+.card {
+    background-color: maroon;
+    position: relative;
 }
+
+.card-front,
+.card-back{
+    position: absolute;
+}/*vão ocupar o mesmo lugar (absolute)*/
 
 .contato{
     background-color: dimgray;
